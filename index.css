@@ -1,0 +1,230 @@
+body {
+  overflow: hidden;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+/*///////////// header ////////////////*/
+
+header {
+  height: 40px;
+  width: 100%;
+  padding: 4px;
+  border-bottom: 2px solid;
+  border-color: #666;
+}
+
+header h2 {
+  margin: 4px 0 4px 8px;
+  background-color: #666;
+  color: white;
+  padding: 4px 8px;
+  width: 60px;
+  text-align: center;
+  font-size: 14pt;
+}
+
+.back-button {
+  display: none;
+}
+
+/*/////////////////////////////////////////////*/
+/*///////////// main container ////////////////*/
+/*/////////////////////////////////////////////*/
+
+.flex-container {
+  position: relative;
+  display: flex;
+  background-color: white;
+  width: 70%;
+  min-width: 600px;
+  height: calc(100vh - 28px);
+}
+
+/*///////////////////////////////////////////*/
+/*///////////// main article ////////////////*/
+/*///////////////////////////////////////////*/
+
+.flex-container article {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  line-height: 20px;
+  font-size: 10px;
+  max-width: 70%;
+  height: calc(100vh - 28px);
+  overflow: auto;
+  background-color: white;
+}
+
+#article-main-div {
+  padding-left: 8px;
+  padding-right: 28px;
+}
+
+article::-webkit-scrollbar {
+  display: none;
+}
+
+article h1 {
+  font-size: 24pt;
+}
+
+article h3 {
+  font-size: 18pt;
+}
+
+article p {
+  font-size: 12pt;
+}
+
+/*////////////////////////////////////////*/
+/*///////////// side menu ////////////////*/
+/*////////////////////////////////////////*/
+
+aside {
+  background-color: #fafafa;
+  width: 30%;
+  min-width: 170px;
+  height: calc(100vh - 28px);
+  /* overflow-y: auto; */
+}
+
+#menu-nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fafafa;
+  text-align: center;
+}
+
+.icon-container {
+  border-style: none;
+  cursor: pointer;
+  /* overflow-y: auto; */
+}
+
+.icon-container.active {
+  border-bottom: 1px solid;
+}
+
+.menu-icon {
+  width: 20px;
+  height: 20px;
+  opacity: 0.4;
+}
+
+.menu-icon.active {
+  opacity: 1;
+}
+
+.icon-container p {
+  margin: 5px;
+  font-size: 10px;
+  font-weight: normal;
+}
+
+.icon-container p.active {
+  font-weight: 900;
+}
+
+#aside-content {
+  height: 100vh;
+  padding-top: 12px;
+  padding-left: 6px;
+  padding-right: 6px;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+#figure1-div {
+  font-size: 12pt
+}
+
+#figure1-img {
+  width: 100%
+}
+
+#figure2-img {
+  width: 100%
+}
+
+#figure2-div {
+  font-size: 12pt
+}
+
+@media(max-width: 650px) {
+
+  header.active {
+    background-color: #fafafa;
+  }
+
+  header h2.active {
+    display: none;
+  }
+
+  .back-button {
+    display: inline-block;
+    margin-top: 8px;
+    margin-left: 8px;
+    cursor: pointer;
+  }
+
+  .flex-container {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .flex-container article {
+    max-width: 100%;
+  }
+
+  .flex-container article.active {
+    display: none;
+  }
+
+  aside {
+    position: absolute;
+    width: 20px;
+    min-width: initial;
+    right: 0;
+    background-color: transparent;
+    overflow: auto;
+  }
+
+  aside.active {
+    min-width: 100vw;
+    left: 0;
+  }
+  
+  #menu-nav {
+    flex-direction: column;
+    background-color: transparent;
+  }
+
+  #menu-nav.active {
+    display: none;
+  }
+
+  .icon-container {
+    margin-bottom: 8px;
+  }
+
+  .icon-container p {
+    display: none;
+  }
+
+  #aside-content {
+    display: none;
+    overflow: visible;
+  }
+
+  #aside-content.active {
+    display: flex;
+    flex-direction: column;
+    
+  }
+}
